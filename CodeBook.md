@@ -14,6 +14,7 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 The data
 
 The dataset includes the following files:
+
     - README.txt
     - features_info.txt: Shows information about the variables used on the feature vector.
     - features.txt: List of all features.
@@ -37,6 +38,7 @@ The dataset includes the following files:
 TRANSFORMATION DETAILS:
 
 The transformation details step includes 5 topics:
+
     1.Merges the training and the test sets to create one data set.
     2.Extracts only the measurements on the mean and standard deviation for each measurement.
     3. Uses descriptive activity names to name the activities in the data set
