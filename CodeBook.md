@@ -14,7 +14,6 @@ The sensor signals (accelerometer and gyroscope) were pre-processed by applying 
 The data
 
 The dataset includes the following files:
-
     - README.txt
     - features_info.txt: Shows information about the variables used on the feature vector.
     - features.txt: List of all features.
@@ -38,7 +37,6 @@ The dataset includes the following files:
 TRANSFORMATION DETAILS:
 
 The transformation details step includes 5 topics:
-
     1.Merges the training and the test sets to create one data set.
     2.Extracts only the measurements on the mean and standard deviation for each measurement.
     3. Uses descriptive activity names to name the activities in the data set
@@ -48,9 +46,7 @@ The transformation details step includes 5 topics:
 
 R SCRIPT:
 
-A R script was created to include all the previous steps. This script, named run_analysis.R
-
-The run_analysis.R script allows to download, unzip and get the data files. then it loads the features and activity labels, and extracts the mean and standard deviation column names and data.
+A R script was created to include all the previous steps. This script, named run_analysis.R, allows to download, unzip and get the data files. then it loads the features and activity labels, and extracts the mean and standard deviation column names and data.
 
 After that, the test and train data is processed and the transformation details (previously cited) were applied. The output is a text file with the tidy data set.
 
