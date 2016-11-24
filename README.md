@@ -17,4 +17,4 @@ The R script, run_analysis.R, does the following:
 - Factorize the variable activity in the data frame Data using descriptive activity names
 - Appropriately labels the data set with descriptive variable names 
 - Creates a second, independent tidy data set with the average of each variable for each activity and each subject based on the data set in step 4
-- The output is shown in the file "tidy.txt".
+- The output is shown in the file "tidydata.txt".
