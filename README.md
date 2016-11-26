@@ -11,8 +11,8 @@ The main steps of this script are:
 - unzip the downloaded folder
 - Read data from the files to dataset variables. This step uses the read.table() function.
 - Merge the files having the same number of columns and referring to the same entities. This step uses the rbind() function. 
+- Combine the test and train datasets in a big one dataset. this step uses the cbind() function. 
 - Take the columns with the mean and standard deviation measures, and give the names taken from "features.txt" file 
 - Label the data set with descriptive activity names using the IDs from "activity_labels.txt" file.
-- Use descriptive activity names to name the activities in the dataset
-- Creates a second, independent tidy dataset with the average of each variable for each activity and each subject.
-- The output is stored in a text file named "tidydata.txt".
+- Create a second, independent tidy dataset with the average of each variable for each activity and each subject. This step requires the library(plyr).
+- Store the tidy data from the previous step in a text file using the write.table() function.
