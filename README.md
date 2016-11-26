@@ -6,12 +6,11 @@ The purpose of this project is to demonstrate the ability to collect, work with,
 
 The R script, run_analysis.R, does the following:
 
-- Download (if it isn´t already in the working directory), unzip and get the list of files from the https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+- Download (if it isn´t already in the working directory), unzip and get the list of files from  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
 - Read data from the files and save it into variables
-- Merges the training and the test sets to create one data set, concatenating the data tables by rows
+- Merge the training and test data sets to create one data set, concatenating the data tables by rows
 - Set names to variables
-- Merge columns to get the data frame Data for all data
-- Subset Name of Features by measurements on the mean and standard deviation
+- Extract measurements on the mean and standard deviation measurements for each measurement 
 - Subset the data frame Data by seleted names of Features
 - Read descriptive activity names from “activity_labels.txt”
 - Factorize the variable activity in the data frame Data using descriptive activity names
