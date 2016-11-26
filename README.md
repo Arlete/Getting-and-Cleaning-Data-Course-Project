@@ -7,14 +7,12 @@ The R script, run_analysis.R, uses the data available in the following link:    
 
 The main steps of this script are:
 
-- Download (if it isn´t already in the working directory), unzip and get the list of files from  https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
-- Read data from the files and save it into dataset variables
-- Merge the training and test sets to create one big data set.  
-- Extract only the measurements on the mean and standard deviation for each measurement.
+- Download (if it isn´t already in the working directory) the folder from the link https://d396qusza40orc.cloudfront.net/getdata%2Fprojectfiles%2FUCI%20HAR%20Dataset.zip 
+- unzip the downloaded folder
+- Read data from the files to dataset variables. This step uses the read.table() function.
+- Merge the files having the same number of columns and referring to the same entities. This step uses the rbind() function. 
+- Take the columns with the mean and standard deviation measures, and give the names taken from "features.txt" file 
+- Label the data set with descriptive activity names using the IDs from "activity_labels.txt" file.
 - Use descriptive activity names to name the activities in the dataset
-- Appropriately label the dataset with descriptive variable names.
 - Creates a second, independent tidy dataset with the average of each variable for each activity and each subject.
 - The output is stored in a text file named "tidydata.txt".
-
-
-
