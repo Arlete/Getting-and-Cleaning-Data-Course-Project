@@ -59,7 +59,8 @@ R SCRIPT (run_analysis.R)
 The script run_analysis.R performs the 6 steps described above.
 
      This script downloads the zip folder (a total of 59.7 MB) from the internet, and saves it in the RStudio's working directory.
-    After unzipping the downloaded folder, all the similar data (files having the same number of columns and referring to the same entities) is merged using the rbind() function. Afterwards, only the columns with the mean and standard deviation measures are taken from the whole dataset. 
+    After unzipping the downloaded folder, all the similar data (files having the same number of columns and referring to the same entities) is merged using the rbind() function. 
+    The test and train data are then combined in a whole dataset using the cbind() fucntion. Afterwards, only the columns with the mean and standard deviation measures are taken from the whole dataset. 
     After extracting the relevant columns, they are given the names taken from "features.txt" file.
     IDs from "activity_labels.txt" file were used to approppriately label the data set with descriptive activity names.
     To finish, an independent tidy data set is generated containing all the average measures for each subject and activity type (180 rows). 
