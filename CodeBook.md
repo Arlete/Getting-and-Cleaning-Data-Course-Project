@@ -1,4 +1,4 @@
-This is a code book that describes the variables, the data, and the transformations/work performed to clean up the data.
+This is a code book that describes the variables, the data, and the transformations/work performed to clean up the data and create an independent tidy data set.
 
 THE DATA SOURCE:
 
@@ -35,39 +35,44 @@ The dataset includes the following files:
      . 'Inertial Signals/body_gyro_x_test.txt': The angular velocity vector measured by the gyroscope for each window sample. The units are radians/second.
 
 
-TRANSFORMATION DETAILS:
+ TRANSFORMATION DETAILS:
 
 The transformation details step includes 5 topics:
 
-    1.Merges the training and the test sets to create one data set.
+    1.Merges the training and the test sets to create one data set.  
     2.Extracts only the measurements on the mean and standard deviation for each measurement.
-    3. Uses descriptive activity names to name the activities in the data set
-    4. Appropriately labels the data set with descriptive activity names.
-    5. Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
+    3.Uses descriptive activity names to name the activities in the data set
+    4.Appropriately labels the data set with descriptive activity names.
+    5.Creates a second, independent tidy data set with the average of each variable for each activity and each subject.
 
 
-R SCRIPT:
+R SCRIPT (run_analysis.R):
 
-The script run_analysis.Rperforms the 5 steps described in the course project's definition.
+The script run_analysis.R performs the 5 steps described in the course project's definition.
 
-    First, all the similar data is merged using the rbind() function. By similar, we address those files having the same number of columns and referring to the same entities.
-    Then, only those columns with the mean and standard deviation measures are taken from the whole dataset. After extracting these columns, they are given the correct names, taken from features.txt.
-    As activity data is addressed with values 1:6, we take the activity names and IDs from activity_labels.txt and they are substituted in the dataset.
-    On the whole dataset, those columns with vague column names are corrected.
-    Finally, we generate a new dataset with all the average measures for each subject and activity type (30 subjects * 6 activities = 180 rows). The output file is called averages_data.txt, and uploaded to this repository.
+     First, this script allows to download the zip folder (a total of 59.7 MB) from its internet location, and save it in a folder created at RStudio's working directory.
+    After unzip the download folder, all the similar data is merged using the rbind() function. By similar, we address those files having the same number of columns and referring to the same entities. Then, only those columns with the mean and standard deviation measures are taken from the whole dataset. 
+    After extracting the relevant columns, they are given the correct names taken from features.txt.
+    IDs from activity_labels.txt were used the approppriately lables the data set with descriptive activity names.
+    Finally, we generate a new tidy data set with all the average measures for each subject and activity type (180 rows). The output file is called "tidydata.txt", and uploaded to this repository.
 
-Variables
+Main Variables
+ 
+    data: A folder created in the RStudio Working directory to save the downloaded files.
+    fileUrl: the link to access the input files.
+    path: describes the folder with unzip input files.
+    files: variable containing the list of files download from the internet.
+    data_XTest, data_YTest, data_XTrain, data_YTrain, data_SubjectTest: contain the testing and training data from the downloaded files
+    data_Subject: merges the data_SubjectTrain and data_SubjectTest.
+    data_Activity: merges the data_YTrain and data_YTest.
+    data_Features: merges the data_XTrain and data_XTest.
+    dataFeaturesNames: contains the correct names for the data_Features dataset.
+    activityLabels: contains the activity names for the data_activity dataset.
+    Data: merges data_Features, data_Activity and data_Subject.
+    Data2: contains the tidy data set with the average of each variable for each activity and each subject.
+     
 
-    x_train, y_train, x_test, y_test, subject_train and subject_test contain the data from the downloaded files.
-    x_data, y_data and subject_data merge the previous datasets to further analysis.
-    features contains the correct names for the x_data dataset, which are applied to the column names stored in mean_and_std_features, a numeric vector used to extract the desired data.
-    A similar approach is taken with activity names through the activities variable.
-    all_data merges x_data, y_data and subject_data in a big dataset.
-    Finally, averages_data contains the relevant averages which will be later stored in a .txt file. ddply() from the plyr package is used to apply colMeans() and ease the development.
+ Output
+ The output of this R script is the tidydata.txt file taht contains the tidy data set stored in Data2 variable.
 
-A R script was created to include all the previous steps. This script, named run_analysis.R, allows to download, unzip and get the data files. then it loads the features and activity labels, and extracts the mean and standard deviation column names and data.
-
-After that, the test and train data is processed and the transformation details (previously cited) were applied. The output is a text file with the tidy data set.
-
-A complete description of this script is available in the README.md file. 
 
